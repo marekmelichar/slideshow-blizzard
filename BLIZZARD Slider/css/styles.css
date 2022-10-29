@@ -1,0 +1,192 @@
+/* GENERAL */
+
+@font-face{font-family:"OpenSans-Light";src:url(../fonts/OpenSans-Light.ttf) format('truetype');}
+@font-face{font-family:"OpenSans-Regular";src:url(../fonts/OpenSans-Regular.ttf) format('truetype');}
+@font-face{font-family:"OpenSans-Bold";src:url(../fonts/OpenSans-Bold.ttf) format('truetype');}
+
+body {
+	color: #3D3D3D;
+	background: #FFF;
+	font: 1em/1.5 'OpenSans-Light', sans-serif;
+	width: 100%;   /* pokud je tohle pevná šířka např. 1600px, je to staticky, pokud je tam 100%, je to responzivní */
+
+	-webkit-font-smoothing: antialiased;
+
+    	
+    background:
+        -webkit-radial-gradient(black 15%, transparent 16%) 0 0,
+        -webkit-radial-gradient(black 15%, transparent 16%) 8px 8px,
+        -webkit-radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
+        -webkit-radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
+        background-color:#282828;
+        background-size:16px 16px;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+
+
+/* vsechny floatovane elementy budou containovane, a clearovane */
+
+.container:before,
+.group:before,
+.menu:before,
+.container:after,
+.group:after,
+.menu:after {
+	content: " ";
+	display: table;
+}
+
+.container:after,
+.group:after,
+.menu:after {
+	clear: both;
+}
+
+.container,
+.group,
+.menu {
+	*zoom: 1;
+}
+
+
+
+
+a {
+	text-decoration: none;
+}
+
+strong {
+	font-weight: 600;
+}
+
+.menu {
+	list-style: none;
+	padding-left: 0;
+	margin: 0;
+}
+
+.menu li {
+	float: left;
+}
+
+.fa {
+	vertical-align: middle;
+}
+
+.container {
+	width: 1150px;
+	margin: 0 auto;
+}
+
+
+
+/* STYLY */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    vertical-align: middle;
+    border: 0;
+}
+
+ul {
+    border-top: 1px solid #121212;
+    border-bottom: 1px solid #121212;
+}
+
+ul, #next, #prev {
+    list-style: none;
+    position: absolute;
+    top: 35px;
+    left: 35px;
+}
+
+li {
+    float: left;
+    background: #021422;
+}
+
+li, li img, #next, #prev {
+    width: 875px;
+    height: 385px;
+}
+
+li img {
+    opacity: 0.4;
+}
+
+#container {
+    overflow: hidden;
+}
+
+#centeringDiv {
+    width: 940px;
+    height: 450px;
+    margin: 50px auto;
+    position: relative;
+}
+
+#current {
+    width: 940px;
+    height: 450px; /* pokud se mu nezada sirka, vyska tak nezobrazi zadny velky obrazek na stredu */
+    overflow: hidden; /* zobrazi se vzdycky jen jeden velky obrazek na stredu */
+    position: relative;
+    z-index: 2;
+    -webkit-box-shadow: 0 0 50px #000;
+    -moz-box-shadow: 0 0 50px #000;
+    box-shadow: 0 0 50px #000;
+}
+
+#current p {
+    width: 2820px;
+    position: relative; /* pos:relative protoze se v nem budou posouvat elementy */
+    left: -940px; /* aby zacinal nalevo na zacatku stranky */
+}
+
+#current img {
+    position: absolute; /* aby se daly obrazky posouvat */
+    left: 940px; /* aktualni obrazek aby byl uprostred stranky */
+}
+
+#next, #prev {
+    z-index: 5;
+    cursor: pointer;
+}
+
+#prev {
+    left: -875px; /* bude nalevo od centralniho obrazku */
+}
+
+#next {
+    left: 940px; /* bude napravo od centralniho obrazku */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
